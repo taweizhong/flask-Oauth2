@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OAuth Client</title>
+</head>
+<body>
+    <h1>OAuth 2.0 Client</h1>
+    {% if user %}
+        <p>Welcome, {{ user['username'] }}!</p>
+        <p><a href="{{ url_for('protected_resource') }}">Access Protected Resource</a></p>
+        <p><a href="{{ url_for('logout') }}">Logout</a></p>
+    {% else %}
+        <p><a href="{{ url_for('login') }}">Login with OAuth Server</a></p>
+    {% endif %}
+</body>
+</html>
